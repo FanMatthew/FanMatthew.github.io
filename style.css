@@ -1,0 +1,277 @@
+:root {
+  /* Beginner note: change the main colours here to update the whole site. */
+  --cream: #f5f1e8;
+  --paper: #fffdf9;
+  --sky: #dfeaf6;
+  --blue: #234d79;
+  --blue-dark: #163451;
+  --blue-soft: #5f87af;
+  --text: #1d2b36;
+  --border: #c8d6e6;
+  --shadow: rgba(17, 43, 63, 0.12);
+
+  /* Beginner note: change spacing values here to adjust gaps and layout spacing. */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+
+  --max-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #0f6fc5;
+  outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.site-header {
+  background: rgba(255, 253, 249, 0.95);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  gap: var(--space-md);
+}
+
+.brand {
+  color: var(--blue-dark);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.nav-links a {
+  color: var(--blue-dark);
+  font-weight: 600;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--sky) 0%, var(--paper) 100%);
+  padding: var(--space-xl) 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--blue-dark);
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  margin-bottom: var(--space-sm);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: var(--space-md);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--blue);
+  font-weight: 700;
+  margin: 0 0 var(--space-md);
+}
+
+.intro {
+  max-width: 700px;
+  font-size: 1.08rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.3rem;
+  border-radius: 999px;
+  border: 2px solid var(--blue);
+  font-weight: 700;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button.primary {
+  background: var(--blue);
+  color: var(--paper);
+}
+
+.button.primary:hover {
+  background: var(--blue-dark);
+  text-decoration: none;
+}
+
+.button.secondary {
+  background: transparent;
+  color: var(--blue);
+}
+
+.button.secondary:hover {
+  background: var(--sky);
+  text-decoration: none;
+}
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.alt-section {
+  background: #edf5fb;
+}
+
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-list li {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: var(--space-md);
+  box-shadow: 0 4px 12px var(--shadow);
+  font-weight: 600;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+
+.project-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: var(--space-md);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.project-card h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.contact-section {
+  background: var(--blue-dark);
+  color: var(--paper);
+}
+
+.contact-section h2,
+.contact-section a {
+  color: var(--paper);
+}
+
+.site-footer {
+  background: #112a3a;
+  color: #edf3f8;
+  padding: var(--space-md) 0;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .nav {
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-sm) 0;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .hero {
+    padding-top: var(--space-lg);
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/*
+  Beginner note:
+  This website uses a calm blue-and-cream palette.
+  Adjust the variables at the top to change colours quickly.
+*/
+
+/*
+  Beginner note:
+  The margin and padding values above control the spacing between sections.
+  If you want more or less space, update the --space-* variables.
+*/
